@@ -2,17 +2,6 @@ import {Button } from 'react-bootstrap';
 
 
 const importedButton = (anything) => {
-    // const numButtonDrip = {
-    //     width: "60px",
-    //     height: "60px",
-    //     backgroundColor: "Maroon",
-    //     padding: "10px",
-    //     margin: "4px",
-    //     borderColor: "Black",
-    //     borderRadius: "32px",
-    //     fontWeight: "Bold",
-    //     fontSize: "20px"
-    // }
     const handleClick = () => anything.onClick(anything.increment);
     return (
         <>
