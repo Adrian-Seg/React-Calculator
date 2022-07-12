@@ -1,0 +1,29 @@
+.calcBG {
+  background-color: #222831;
+  width: 100%;
+  height: 100vh;
+}
+.calcScreenBG {
+  background-color: #393E46;
+  min-height: 45px;
+}
+.numButtonDrip {
+  width: 60px;
+  height: 60px;
+  background-color: maroon !important;
+  margin: 4px;
+  border-color: black !important;
+  border-radius: 32px !important;
+  font-weight: bold !important;
+  font-size: 20px !important;
+}
+.operatorButtonDrip {
+  width: 60px;
+  height: 60px;
+  background-color: #FFD369 !important;
+  margin: 4px;
+  border-color: black !important;
+  border-radius: 32px !important;
+  font-weight: bold !important;
+  font-size: 20px !important;
+}
