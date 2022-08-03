@@ -10,7 +10,7 @@ class CalcButton extends React.Component {
         this.state = {
             num1: "",
             num2: "",
-            sum: "",
+            total: "",
             operation: "",
             numSet: false,
         };
@@ -19,13 +19,13 @@ class CalcButton extends React.Component {
         this.state.numSet !== true ? this.setState({ num1: this.state.num1 += newValue }) : this.setState({ num2: this.state.num2 += newValue });
     }
     ResetCalc = () => {
-        this.setState({ num1: "", num2: "", sum: "", operation: "", numSet: false });
+        this.setState({ num1: "", num2: "", total: "", operation: "", numSet: false });
     }
     setOperation = (newOperation) => {
         this.setState({ numSet: true });
         this.setState({ operation: newOperation });
         // If statement to check if numSet is already true(basically if this function has already been triggered), to reset with the exception of the previous sum as num1
-        this.state.numSet === true ? this.setState({ num1: this.state.sum, num2: "", sum: "", operation: newOperation, numSet: true }) : console.log("hehe");
+        this.state.numSet === true ? this.setState({ num1: this.state.total, num2: "", total: "", operation: newOperation, numSet: true }) : console.log("hehe");
     }
     QuickMath = () => {
         switch (this.state.operation) {
@@ -34,19 +34,19 @@ class CalcButton extends React.Component {
                 // if (numSet) {
                 //     this.setState({ })
                 // }
-                this.setState({ sum: parseInt(this.state.num1) + parseInt(this.state.num2) });
+                this.setState({ total: parseInt(this.state.num1) + parseInt(this.state.num2) });
                 break;
             case "-":
-                this.setState({ sum: parseInt(this.state.num1) - parseInt(this.state.num2) });
+                this.setState({ total: parseInt(this.state.num1) - parseInt(this.state.num2) });
                 break;
             case "/":
-                this.setState({ sum: parseInt(this.state.num1) / parseInt(this.state.num2) });
+                this.setState({ total: parseInt(this.state.num1) / parseInt(this.state.num2) });
                 break;
             case "*":
-                this.setState({ sum: parseInt(this.state.num1) * parseInt(this.state.num2) });
+                this.setState({ total: parseInt(this.state.num1) * parseInt(this.state.num2) });
                 break;
             case "=":
-                this.setState({ sum: parseInt(this.state.num1) * parseInt(this.state.num2), num1: parseInt(this.state.num1) * parseInt(this.state.num2), num2: "", sum: null, operation: "", numSet: false });
+                this.setState({ total: parseInt(this.state.num1) * parseInt(this.state.num2), num1: parseInt(this.state.num1) * parseInt(this.state.num2), num2: "", total: null, operation: "", numSet: false });
                 break;
             default:
                 break;
@@ -62,9 +62,9 @@ class CalcButton extends React.Component {
                             <ImportedDisplay message={this.state.operation} />
                             <ImportedDisplay message={this.state.num2} />
                             {
-                                this.state.sum !== "" ? <ImportedDisplay message="=" /> : null
+                                this.state.total !== "" ? <ImportedDisplay message="=" /> : null
                             }
-                            <ImportedDisplay message={this.state.sum} />
+                            <ImportedDisplay message={this.state.total} />
                         </Col>
                     </Row>
                     <Row>
